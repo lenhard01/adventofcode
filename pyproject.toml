@@ -1,0 +1,50 @@
+[project]
+name = "adventofcode"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv]
+dev-dependencies = [
+    "ruff",
+    "ty",
+]
+
+[tool.ty.src]
+include = [ "**/*.py" ]
+exclude = [ "**/node_modules", "**/__pycache__", ".venv" ]
+
+[tool.ruff]
+include = [ "**/*.py" ]
+exclude = [ "**/node_modules", "**/__pycache__", ".venv" ]
+
+[tool.ruff.lint]
+select = [
+  "I",   # isort
+  "UP",  # pyupgrade
+  "B",   # bugbear
+  "N", # naming conventions
+  "S", # security
+  "A", # builtins
+  "ASYNC", # async best practices
+  "ANN",
+]
+ignore = [
+    # Line too long (handled by formatter)
+    "E501",
+    # don't force type hints on 'self', 'cls', tests, etc.
+    "ANN101", "ANN102", "ANN401",
+    # ignore unused imports
+    "F401",
+]
+
+
+[tool.ruff.format]
+quote-style = "preserve" # "double" | "single" | "preserve"
+indent-style = "space" # "space" | "tab"
+line-ending = "lf"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+
