@@ -29,7 +29,7 @@ select = [
   "S", # security
   "A", # builtins
   "ASYNC", # async best practices
-  "ANN",
+  "ANN", # annotations
 ]
 ignore = [
     # Line too long (handled by formatter)
