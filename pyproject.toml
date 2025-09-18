@@ -31,6 +31,7 @@ select = [
   "ASYNC", # async best practices
   "ANN", # annotations
 ]
+
 ignore = [
     # Line too long (handled by formatter)
     "E501",
