@@ -6,20 +6,6 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
 
-[tool.uv]
-dev-dependencies = [
-    "ruff",
-    "ty",
-]
-
-[tool.ty.src]
-include = [ "**/*.py" ]
-exclude = [ "**/node_modules", "**/__pycache__", ".venv" ]
-
-[tool.ruff]
-include = [ "**/*.py" ]
-exclude = [ "**/node_modules", "**/__pycache__", ".venv" ]
-
 [tool.ruff.lint]
 select = [
   "I",   # isort
@@ -29,9 +15,8 @@ select = [
   "S", # security
   "A", # builtins
   "ASYNC", # async best practices
-  "ANN", # annotations
+  "ANN",
 ]
-
 ignore = [
     # Line too long (handled by formatter)
     "E501",
@@ -48,4 +33,10 @@ indent-style = "space" # "space" | "tab"
 line-ending = "lf"
 skip-magic-trailing-comma = false
 docstring-code-format = true
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.1",
+    "ty>=0.0.1a21",
+]
 
