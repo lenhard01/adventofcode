@@ -14,8 +14,18 @@ def part1(data: list[str]) -> int:
     return floor
 
 
-def part2(data):
-    pass
+def part2(data: list[str]) -> None:
+    floor: int = 0
+    basement = 0
+
+    for i, char in enumerate(data, start=1):
+        if char == "(":
+            floor += 1
+        elif char == ")":
+            floor -= 1
+
+        if floor == -1:
+            return i
 
 
 if __name__ == "__main__":
